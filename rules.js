@@ -81,10 +81,10 @@ export default (styles) => ({
         resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
         source: { uri: node.target },
         style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image,
-        indicator: Progress.Pie
+        indicator: Progress.Pie,
         indicatorProps: {
           color: '#3d3d3d',
-        }
+        },
       })
     }
   },
