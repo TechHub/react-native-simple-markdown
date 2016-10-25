@@ -1,5 +1,7 @@
 import React, { createElement } from 'react'
-import { Image, Text, View, Linking } from 'react-native'
+import { Text, View, Linking } from 'react-native'
+import Image from 'react-native-image-progress';
+import * as Progress from 'react-native-progress';
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
@@ -78,7 +80,11 @@ export default (styles) => ({
         key: state.key,
         resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
         source: { uri: node.target },
-        style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image
+        style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image,
+        indicator: Progress.Pie
+        indicatorProps: {
+          color: '#3d3d3d',
+        }
       })
     }
   },
